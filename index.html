@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> <!-- swiper css-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!-- swiper jsvascript-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <!-- drop down menu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abhaya+Libre:wght@400;500;600;700;800&family=Acme&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="nav-bar">
+        <div class="header-container">
+            <nav class="menu">
+                <div class="logo">BonDés</div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-dd-target="first" aria-label="Dropdown Menu">Services</a>
+                        <ul class="dropdown-menu" data-dd-path="first">
+                            <li><a class="dropdown-menu__link" href="#Commercial-Design">Commercial Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Residential-Design">Residential Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Consulting">Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="image_homepage/beige_living.jpeg" alt="Beige Living Room Design">
+                        <div class="text-overlay">
+                            <h1>Beige Living Room Designs</h1>
+                            <p>Transforming spaces with elegance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="image_homepage/crystal_living_room.jpeg" alt="Crystal Living Room Design">
+                        <div class="text-overlay" id="crystal-text">
+                            <h1>Crystal Living Room Designs</h1>
+                            <p>Where style meets functionality.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="image_homepage/minimalistic.jpeg" alt="Minimalistic Design">
+                        <div class="text-overlay">
+                            <h1>Minimalistic Living Room Design</h1>
+                            <p>Create your perfect sanctuary.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+
+    <!-- Images slider -->
+    <script src="minimal-accessible-dropdown-menu/demo/dropdown.min.js" defer></script> 
+    <!-- drop down menu-->     
+    <script>
+        // image swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true, 
+            autoplay: {
+                delay: 5000, 
+                disableOnInteraction: false, 
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', 
+                prevEl: '.swiper-button-prev', 
+            },
+        });
+
+        // hamburger meun
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

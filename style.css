@@ -1,0 +1,376 @@
+/* Desktop */
+/* Home page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* header */
+.nav-bar {
+  height: auto;
+}
+
+.menu {
+  background: radial-gradient(circle at 10% 20%, rgb(243, 222, 199) 39.5%, rgba(100, 46, 122, 0.23) 100.2%);
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem; 
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: black;
+  font-family: "Acme", sans-serif;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease; 
+}
+
+.menu a:hover {
+  color: chocolate;
+}
+
+#nav-links {
+  gap: 100px;
+}
+
+/* images slider */
+.hero-slider {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 75%;
+}
+
+.slide-content img {
+  width: 100%;
+  height: 87vh;
+  opacity: 0.8; 
+}
+
+#crystal-text {
+  color: yellow;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; 
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 5px gray;
+}
+
+.text-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-overlay p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-color: black; 
+  padding: 20px; 
+  border-radius: 5px; 
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: white;
+}
+
+/* dropdown-menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px 0;
+}
+ 
+.dropdown-menu--active {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+.dropdown-menu__link {
+  display: block;
+  padding: 7px 10px;
+}
+
+/* Gallery page */
+.gallery-title {
+  font-size: 3rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.fade-effect {
+  visibility: hidden;
+}
+
+.fade-effect img {
+  width: 90%;
+  max-width: 800px;
+  height: 50vh;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Contact validate */
+.contact-text {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#contact-form {
+  margin: auto;
+}
+
+form {
+  width: 70vh;
+  background: linear-gradient(to right, #d7d2cc 0%, #62798a 100%);
+  padding: 2rem;
+  box-shadow: 1px 1px 12px #353f47;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+form h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+}
+
+label {
+  font-size: 1rem;
+  color: black;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  transition: border 0.3s ease;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: lightsalmon;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+input.error, textarea.error {
+  border-color: red;
+}
+
+/* mobile first */
+@media screen and (max-width: 767px) {
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  #nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    z-index: 11;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  } 
+
+  #nav-links.active {
+    display: flex;
+    background-color: white
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu li {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -7px);
+  }
+
+  .hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    transition: all 0.5s ease;
+  }
+
+  .hero-slider {
+    height: 50vh;
+  }
+
+  .text-overlay h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .text-overlay p {
+    font-size: 1rem;
+  }
+
+  .gallery-title {
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  
+  .fade-effect img {
+    height: 200px;
+  }
+
+  .contact-text {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  
+  form {
+    width: 90%; 
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  input, textarea {
+    font-size: 1rem; 
+    padding: 0.6rem; 
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .contact-text {
+    font-size: 1.8rem; 
+  }
+}
+

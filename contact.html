@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abhaya+Libre:wght@400;500;600;700;800&family=Acme&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="nav-bar">
+        <div class="header-container">
+            <nav class="menu">
+                <div class="logo">BonDés</div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-dd-target="first" aria-label="Dropdown Menu">Services</a>
+                        <ul class="dropdown-menu" data-dd-path="first">
+                            <li><a class="dropdown-menu__link" href="#Commercial-Design">Commercial Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Residential-Design">Residential Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Consulting">Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="contact-text">Contact Us</h1>
+    <form id="contact-form" method="POST" action="/submit-form">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="minimal-accessible-dropdown-menu/demo/dropdown.min.js" defer></script> <!-- drop down menu--> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> <!-- form validate -->
+    
+    <script>
+        // Form Validation
+        $(document).ready(function() {
+            $("#contact-form").validate({
+                submitHandler: function(form) {
+                    alert("Form submitted successfully!");
+                    form.submit(); 
+                }
+            });
+        });
+
+        // Hamburger menu
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>    
+</body>
+</html>

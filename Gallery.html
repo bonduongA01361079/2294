@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.5/dist/css/lightbox.min.css" rel="stylesheet"> <!-- light box css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abhaya+Libre:wght@400;500;600;700;800&family=Acme&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="nav-bar">
+        <div class="header-container">
+            <nav class="menu">
+                <div class="logo">BonDés</div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-dd-target="first" aria-label="Dropdown Menu">Services</a>
+                        <ul class="dropdown-menu" data-dd-path="first">
+                            <li><a class="dropdown-menu__link" href="#Commercial-Design">Commercial Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Residential-Design">Residential Design</a></li>
+                            <li><a class="dropdown-menu__link" href="#Consulting">Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="gallery-title">Project Gallery</h1>
+    <div class="gallery">
+        <div class="fade-effect" fade-time="3" fade-direction="top">
+            <a href="imgs_gallery/dining_place.jpeg" data-lightbox="gallery" data-title="Dining Place">
+                <img src="imgs_gallery/dining_place.jpeg" alt="dining_place">
+            </a>
+        </div>
+       
+        <div class="fade-effect" fade-time="3" fade-direction="top">
+            <a href="imgs_gallery/forest_design.jpeg" data-lightbox="gallery" data-title="Forest Design">
+                <img src="imgs_gallery/forest_design.jpeg" alt="forest_design">
+            </a>
+        </div>
+       
+        <div class="fade-effect" fade-time="3" fade-direction="top">
+            <a href="imgs_gallery/huge_fireplace.jpeg" data-lightbox="gallery" data-title="Hude Fireplace">
+                <img src="imgs_gallery/huge_fireplace.jpeg" alt="huge_fireplace">
+            </a>
+        </div>
+        
+        <div class="fade-effect" fade-time="3" fade-direction="top">
+            <a href="imgs_gallery/japan_style.jpeg" data-lightbox="gallery" data-title="Japan Style" data-aos-anchor-placement="bottom-bottom">
+                <img src="imgs_gallery/japan_style.jpeg" alt="japan_style">
+            </a>
+        </div>
+
+        <div class="fade-effect" fade-time="3" fade-direction="top">
+            <a href="imgs_gallery/kitchen.jpeg" data-lightbox="gallery" data-title="Kitchen" data-aos-anchor-placement="bottom-bottom">
+                <img src="imgs_gallery/kitchen.jpeg" alt="kitchen">
+            </a>
+        </div>
+
+        <div class="fade-effect" fade-time="3" fade-direction="bottom">
+            <a href="imgs_gallery/modern.jpeg" data-lightbox="gallery" data-title="Modern Design" data-aos-anchor-placement="bottom-bottom">
+                <img src="imgs_gallery/modern.jpeg" alt="modern_design">
+            </a>
+        </div>
+
+        <div class="fade-effect" fade-time="3" fade-direction="bottom">
+            <a href="imgs_gallery/office_room.jpeg" data-lightbox="gallery" data-title="Office Room" data-aos-anchor-placement="bottom-bottom">
+                <img src="imgs_gallery/office_room.jpeg" alt="office_room">
+            </a>
+        </div>
+    </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox-plus-jquery.min.js" integrity="sha512-/IJVg2oav2TggiFftaMSPgttHNmgu/0RSGP64Nm7wqYwjkxj4hAHLRMJi3QNTa22f4pIkvTsCpB848HEilV6MA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- light box -->
+    <script src="minimal-accessible-dropdown-menu/demo/dropdown.min.js" defer></script> 
+    <!-- drop down menu--> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="/fade-slide-scroll/dist/js/modules/fadescroll-2.0.0.js"></script> <!-- scroll animation -->
+
+    <script>
+        // Hamburger menu
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
